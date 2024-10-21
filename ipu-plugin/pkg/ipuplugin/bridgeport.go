@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/intel/ipu-opi-plugins/ipu-plugin/pkg/utils"
+	"github.com/bn222/ipu-opi-plugins/ipu-plugin/pkg/utils"
 	pb "github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/go"
 	log "github.com/sirupsen/logrus"
 	"github.com/vishvananda/netlink"

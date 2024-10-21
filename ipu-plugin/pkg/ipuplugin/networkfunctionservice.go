@@ -17,8 +17,8 @@ package ipuplugin
 import (
 	"context"
 
-	"github.com/intel/ipu-opi-plugins/ipu-plugin/pkg/p4rtclient"
-	"github.com/intel/ipu-opi-plugins/ipu-plugin/pkg/utils"
+	"github.com/bn222/ipu-opi-plugins/ipu-plugin/pkg/p4rtclient"
+	"github.com/bn222/ipu-opi-plugins/ipu-plugin/pkg/utils"
 	pb "github.com/openshift/dpu-operator/dpu-api/gen"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

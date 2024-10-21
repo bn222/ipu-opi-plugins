@@ -22,7 +22,7 @@ import (
 	"path/filepath"
 	"syscall"
 
-	"github.com/intel/ipu-opi-plugins/ipu-plugin/pkg/types"
+	"github.com/bn222/ipu-opi-plugins/ipu-plugin/pkg/types"
 	pb2 "github.com/openshift/dpu-operator/dpu-api/gen"
 
 	pb "github.com/opiproject/opi-api/network/evpn-gw/v1alpha1/gen/go"

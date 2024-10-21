@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/intel/ipu-opi-plugins/ipu-plugin/pkg/types"
-	"github.com/intel/ipu-opi-plugins/ipu-plugin/pkg/utils"
+	"github.com/bn222/ipu-opi-plugins/ipu-plugin/pkg/types"
+	"github.com/bn222/ipu-opi-plugins/ipu-plugin/pkg/utils"
 	log "github.com/sirupsen/logrus"
 
 	pb "github.com/openshift/dpu-operator/dpu-api/gen"
