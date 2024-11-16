@@ -19,7 +19,7 @@ import (
 	"net"
 	"strings"
 
-	"github.com/intel/ipu-opi-plugins/ipu-plugin/pkg/types"
+	"github.com/bn222/ipu-opi-plugins/ipu-plugin/pkg/types"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	pb "github.com/openshift/dpu-operator/dpu-api/gen"

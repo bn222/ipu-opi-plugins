@@ -23,7 +23,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/intel/ipu-opi-plugins/ipu-plugin/pkg/types"
+	"github.com/bn222/ipu-opi-plugins/ipu-plugin/pkg/types"
 	log "github.com/sirupsen/logrus"
 )
 
