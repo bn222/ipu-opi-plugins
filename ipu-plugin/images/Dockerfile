@@ -8,7 +8,6 @@ ARG TARGETARCH
 RUN apk add --no-cache --virtual build-dependencies build-base
 COPY . /usr/src/ipu-opi-plugin
 WORKDIR /usr/src/ipu-opi-plugin
-RUN go mod download
 RUN CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH} go build -a -o bin/ipuplugin ipuplugin/main.go
 
 FROM alpine:3@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
