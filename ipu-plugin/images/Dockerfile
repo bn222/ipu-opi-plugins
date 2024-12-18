@@ -24,11 +24,6 @@ COPY bin/p4runtime-2023.11.0-py3-none-any.whl /opt/p4/p4-cp-nws/bin/
 WORKDIR /
 LABEL io.k8s.display-name="IPU OPI Plugin"
 ENV PYTHONUNBUFFERED=1
-RUN apk add -U --no-cache python3 py3-pip'=='23.3.1-r0 \
-    py3-grpcio'=='1.59.3-r0 \
-    py3-protobuf'=='4.24.4-r0 \
-    py3-netaddr'=='0.9.0-r0
-RUN python3 -m pip install --no-cache-dir --break-system-packages /opt/p4/p4-cp-nws/bin/p4runtime-2023.11.0-py3-none-any.whl
-
+RUN apk add --update --no-cache openssh networkmanager-cli openvswitch iproute2 python3 py3-pip'=='23.3.1-r0
+RUN python3 -m pip install --no-cache-dir --break-system-packages /opt/p4/p4-cp-nws/bin/p4runtime-2023.11.0-py3-none-any.whl grpcio'=='1.59.3 protobuf'=='4.25.0 netaddr'=='0.9.0
 RUN rm -rf /var/cache/apk/*
-RUN apk add --update --no-cache openssh networkmanager-cli openvswitch iproute2
