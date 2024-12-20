@@ -33,9 +33,9 @@ func createDbParam(ovsDbPath string) string {
 
 func getInfrapodNamespace() (string, error) {
 
-	nsCmdParams := []string{"ps", "-a",
+	nsCmdParams := []string{"ps", "x",
 		"|", "grep", "entrypoint.sh",
-		"|", "head", "-n", "1",
+		"|", "grep", "-v", "grep", // TODO: this is very flaky still, should check if there is only one found here
 		"|", "awk", "'{print $1;}'",
 		"|", "xargs", "ip", "netns", "identify",
 		"|", "tr", "-d", "'\n'"}
