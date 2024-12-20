@@ -25,5 +25,5 @@ COPY bin/p4runtime-2023.11.0-py3-none-any.whl /opt/p4/p4-cp-nws/bin/
 WORKDIR /
 LABEL io.k8s.display-name="IPU OPI Plugin"
 ENV PYTHONUNBUFFERED=1
-RUN dnf install -y NetworkManager openvswitch3.4 iproute python3 python3-pip
+RUN dnf install -y NetworkManager openvswitch3.4 iproute python3 python3-pip openssh-clients
 RUN python3 -m pip install --no-cache-dir /opt/p4/p4-cp-nws/bin/p4runtime-2023.11.0-py3-none-any.whl grpcio'=='1.59.3 protobuf'=='4.25.0 netaddr'=='0.9.0
