@@ -1,16 +1,13 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2024 Intel Corporation
-FROM golang:1.22.5-alpine@sha256:0d3653dd6f35159ec6e3d10263a42372f6f194c3dea0b35235d72aabde86486e AS builder
-RUN apk add --no-cache git
+FROM registry.ci.openshift.org/ocp/builder:rhel-9-golang-1.22-openshift-4.18 AS builder
 ARG TARGETOS
 ARG TARGETARCH
 
-RUN apk add --no-cache --virtual build-dependencies build-base
 COPY . /usr/src/ipu-opi-plugin
 WORKDIR /usr/src/ipu-opi-plugin
 RUN CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH} go build -a -o bin/ipuplugin ipuplugin/main.go
 
-# FROM registry.access.redhat.com/ubi9/ubi
 FROM registry.ci.openshift.org/ocp/4.19:base-rhel9
 ARG P4_NAME
 ENV P4_NAME=$P4_NAME
