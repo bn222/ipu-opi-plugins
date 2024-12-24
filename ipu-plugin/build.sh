@@ -3,6 +3,7 @@
 # mkdir -p ./bin && cp -r ../e2e/artefacts/bin/* ./bin/
 # podman build -t intel-vsp -f images/Dockerfile . --no-cache
 # podman image tag intel-vsp intel-vsp
+cd /root/ipu-opi-plugins/ipu-plugin/
 
 cp -r ../e2e/artefacts/fxp-net_linux-networking .
 mkdir -p ./bin && cp -r ../e2e/artefacts/bin/* ./bin/
