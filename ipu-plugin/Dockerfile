@@ -9,12 +9,11 @@ WORKDIR /usr/src/ipu-opi-plugin
 RUN CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH} go build -a -o bin/ipuplugin ipuplugin/main.go
 
 FROM registry.ci.openshift.org/ocp/4.19:base-rhel9
-ARG P4_NAME
-ENV P4_NAME=$P4_NAME
 
 COPY --from=builder /usr/src/ipu-opi-plugin/bin/ipuplugin /usr/bin/
-COPY ${P4_NAME}/${P4_NAME}.pkg /
-RUN mkdir -p /opt/p4/p4-cp-nws/bin/
+COPY fxp-net_linux-networking/fxp-net_linux-networking.pkg /
+#By setting workdir, the directory is created automatically
+WORKDIR /opt/p4/p4-cp-nws/bin/
 COPY bin/p4rt-ctl /opt/p4/p4-cp-nws/bin/
 #TODO: Update to newer package, according to release.
 COPY bin/p4runtime-2023.11.0-py3-none-any.whl /opt/p4/p4-cp-nws/bin/
