@@ -1,4 +1,4 @@
-module github.com/intel/ipu-opi-plugins/ipu-plugin
+module github.com/bn222/ipu-opi-plugins/ipu-plugin
 
 go 1.22.4
 
