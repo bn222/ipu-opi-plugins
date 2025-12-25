@@ -22,7 +22,7 @@ import (
 	"github.com/intel/ipu-opi-plugins/ipu-plugin/pkg/types"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	pb "github.com/openshift/dpu-operator/dpu-api/gen"
+	pb "github.com/opiproject/opi-api/v1/gen/go/lifecycle/v1alpha1"
 	"github.com/vishvananda/netlink"
 )
 
